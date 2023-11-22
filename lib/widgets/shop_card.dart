@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously, unnecessary_string_interpolations
+
 import 'package:flutter/material.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
@@ -33,7 +35,6 @@ class ShopCard extends StatelessWidget {
 
           // Navigate ke route yang sesuai (tergantung jenis tombol)
           if (item.name == "Tambah Produk") {
-            // TODO: Gunakan Navigator.push untuk melakukan navigasi ke MaterialPageRoute yang mencakup ShopFormPage.
             Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -48,7 +49,6 @@ class ShopCard extends StatelessWidget {
           // tambahkan else if baru seperti di bawah ini
           else if (item.name == "Logout") {
                   final response = await request.logout(
-                      // TODO: Ganti URL dan jangan lupa tambahkan trailing slash (/) di akhir URL!
                       "http://127.0.0.1:8000/auth/logout/");
                   String message = response["message"];
                   if (response['status']) {
